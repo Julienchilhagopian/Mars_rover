@@ -230,12 +230,12 @@ function explosion(rover1, rover2) {
 
 for (var i = 0; i < userInput1.length; i++){
 
-var string1 = userInput1[i];
+var commandString1 = userInput1[i];
 
 var previousPositionX = myRover1.position[0]; // This is used for the lastPosition function
 var previousPositionY = myRover1.position[1];
 
-commands(string1, myRover1);
+commands(commandString1, myRover1);
 
 // obstacle detection
 detection(myRover1, obstacle1);
@@ -245,13 +245,13 @@ detection(myRover1, obstacle2);
 
 for (var j = 0; j < userInput2.length; j++){
 
-var string2 = userInput2[j];
+var commandString2 = userInput2[j];
 
 var previousPositionX = myRover2.position[0];
 var previousPositionY = myRover2.position[1];
 
 
-commands(string2, myRover2);
+commands(commandString2, myRover2);
 
 // obstacle detection
 detection(myRover2, obstacle1);
