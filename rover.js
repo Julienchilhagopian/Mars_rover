@@ -146,26 +146,30 @@ var userInput1 = prompt("Directions for the FIRST rover");
 var userInput2 = prompt("Directions for the SECOND rover");
 
 
-// The rovers commands acccording to the inputs
 
+//A bit of CSS so that it looks better on the console
+var style = `font-family: Helvetica, Times ; font-size: 15px`;
+
+
+// The rovers commands acccording to the inputs
 function commands(string, rover){
 
   switch(string){
   case 'f':
     goForward(rover);
-    console.log(`%c${rover.name} New position : [${rover.position[0]}, ${rover.position[1]}]`, `font-family: Helvetica, Times ; font-size: 15px`);
+    console.log(`%c${rover.name} New position : [${rover.position[0]}, ${rover.position[1]}]`, style);
     break;
   case 'b':
     goBackward(rover);
-    console.log(`%c${rover.name} New position : [${rover.position[0]}, ${rover.position[1]}]`, `font-family: Helvetica, Times ; font-size: 15px`);
+    console.log(`%c${rover.name} New position : [${rover.position[0]}, ${rover.position[1]}]`, style);
     break;
   case 'r':
     goRight(rover);
-    console.log(`%c${rover.name} Turned Right \u21bb : [${rover.position[0]}, ${rover.position[1]}]`, `font-family: Helvetica, Times ; font-size: 15px`);
+    console.log(`%c${rover.name} Turned Right \u21bb : [${rover.position[0]}, ${rover.position[1]}]`, style);
     break;
   case 'l':
     goLeft(rover);
-    console.log(`%c${rover.name} Turned Left \u21ba : [${rover.position[0]}, ${rover.position[1]}]`, `font-family: Helvetica, Times ; font-size: 15px`);
+    console.log(`%c${rover.name} Turned Left \u21ba : [${rover.position[0]}, ${rover.position[1]}]`, style);
     break;
   default:
     console.log('%c! Wrong command type !', 'font-family: Helvetica, Times ; font-size: 30px ; color: #F02A00 ');
@@ -204,7 +208,7 @@ function detection(rover, obstacle){
     console.log('%cOBSTACLE REACHED WE CAN NOT GO FURTHER !', 'font-family: Helvetica, Times ; font-size: 20px ; color:#f5564d ; font-weight: bold');
     lastPosition(rover);
   } else {
-    console.log("%cChill all clear", "font-family: Helvetica");
+    console.log("%cChill all clear", style);
   }
 }
 }
@@ -219,7 +223,7 @@ function explosion(rover1, rover2) {
     console.log('%c!!! Collision between our lovely rovers !!!', 'font-family: Helvetica, Times ; font-size: 20px ; color:#9a0202 ; font-weight: bold');
     rover1.position = initialPosition1; // Bringing back rovers to their initial position
     rover2.position = initialPosition2;
-    console.log(`Due to the damages rovers returned to their initial position : Rover1 [${rover1.position}] Rover2 [${rover2.position}]`);
+    console.log(`%cDue to the damages rovers returned to their initial position : Rover1 [${rover1.position}] Rover2 [${rover2.position}]`, style);
   } else {
     console.log("its ok");
   }
