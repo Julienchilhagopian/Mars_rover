@@ -1,4 +1,4 @@
-/*jshint esversion: 6 */
+ /*jshint esversion: 6 */
 
 
 // The 10x10 grid
@@ -25,7 +25,7 @@ var myRover1 = {
 
 
 var myRover2 = {
-  position: [2, 2],
+  position: [1, 2],
   direction: 'S',
   name: '\ud83d\udd35 Rover2'
 };
@@ -57,16 +57,16 @@ function roverToSphere(rover){
 function goForward(rover) {
   switch(rover.direction) {
     case 'N':
-      rover.position[0]++;
-      break;
-    case 'E':
-      rover.position[1]++;
-      break;
-    case 'S':
       rover.position[0]--;
       break;
-    case 'W':
+    case 'E':
       rover.position[1]--;
+      break;
+    case 'S':
+      rover.position[0]++;
+      break;
+    case 'W':
+      rover.position[1]++;
       break;
   }
 roverToSphere(rover);
@@ -79,16 +79,16 @@ roverToSphere(rover);
 function goBackward(rover) {
 switch (rover.direction) {
   case 'N':
-  rover.position[0]--;
-  break;
-case 'E':
-  rover.position[1]--;
-  break;
-case 'S':
   rover.position[0]++;
   break;
-case 'W':
+case 'E':
   rover.position[1]++;
+  break;
+case 'S':
+  rover.position[0]--;
+  break;
+case 'W':
+  rover.position[1]--;
   break;
 }
 roverToSphere(rover);
@@ -244,6 +244,10 @@ commands(commandString1, myRover1);
 // obstacle detection
 detection(myRover1, obstacle1);
 detection(myRover1, obstacle2);
+
+// Avoiding any collisions between rovers
+explosion(myRover1, myRover2);
+
 }
 
 
