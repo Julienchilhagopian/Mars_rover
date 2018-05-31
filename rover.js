@@ -33,7 +33,7 @@ var myRover2 = {
 
 // this will be used in case our rovers bump into each others
 const initialPosition1 = [1, 1];
-const initialPosition2 = [2, 2];
+const initialPosition2 = [1, 2];
 
 
 
@@ -60,13 +60,13 @@ function goForward(rover) {
       rover.position[0]--;
       break;
     case 'E':
-      rover.position[1]--;
+      rover.position[1]++;
       break;
     case 'S':
       rover.position[0]++;
       break;
     case 'W':
-      rover.position[1]++;
+      rover.position[1]--;
       break;
   }
 roverToSphere(rover);
@@ -82,13 +82,13 @@ switch (rover.direction) {
   rover.position[0]++;
   break;
 case 'E':
-  rover.position[1]++;
+  rover.position[1]--;
   break;
 case 'S':
   rover.position[0]--;
   break;
 case 'W':
-  rover.position[1]--;
+  rover.position[1]++;
   break;
 }
 roverToSphere(rover);
