@@ -19,14 +19,14 @@ for (i=0; i < 10; i++) {
 //Our 2 lovely Rovers
 var myRover1 = {
   position: [1, 1],
-  direction: 'S',
+  direction: 'N',
   name: '\ud83d\udd34 Rover1'
 };
 
 
 var myRover2 = {
   position: [1, 2],
-  direction: 'S',
+  direction: 'N',
   name: '\ud83d\udd35 Rover2'
 };
 
